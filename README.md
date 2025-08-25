@@ -1,14 +1,8 @@
-Конечно! Ниже — готовый `README.md` на английском языке для вашего GitHub-репозитория, описывающий библиотеку **Control Library v1.0**, включающую классы `Button`, `Pot`, и `Joystick`.
-
----
-
 # Control Library v1.0
 
 A lightweight Arduino C++ library for reading common input devices: buttons, potentiometers, and analog joysticks. Designed for simplicity and efficiency, this library provides easy-to-use abstractions for reliable input handling in embedded projects.
 
 Perfect for DIY controllers, robotics, UI prototypes, and interactive art.
-
----
 
 ## 📦 Features
 
@@ -18,10 +12,9 @@ Perfect for DIY controllers, robotics, UI prototypes, and interactive art.
   - Dead zone calibration
   - Auto-trim (centering)
   - Adjustable margins and output range
-- ✅ No external dependencies — only uses `Arduino.h` and `millis()`
+- ✅ No external dependencies — only uses `Arduino.h`
 - ✅ Lightweight and efficient for real-time applications
 
----
 
 ## 🛠️ Installation
 
@@ -35,8 +28,6 @@ Perfect for DIY controllers, robotics, UI prototypes, and interactive art.
 ```
 
 > ⚠️ Rename the main header file to `Control.h` if needed, or include individual components.
-
----
 
 ## 🔧 Components
 
@@ -55,16 +46,6 @@ void loop() {
   }
 }
 ```
-
-#### Constructor
-
-```cpp
-Button(uint8_t pin)
-```
-
-- Uses internal `INPUT_PULLUP`, so button should connect pin to GND when pressed.
-
-#### Method
 
 | Method | Description |
 |-------|-------------|
@@ -87,14 +68,6 @@ void loop() {
   delay(100);
 }
 ```
-
-#### Constructor
-
-```cpp
-Pot(uint8_t pin)
-```
-
-#### Method
 
 | Method | Description |
 |-------|-------------|
@@ -130,17 +103,6 @@ void loop() {
 }
 ```
 
-#### Constructor
-
-```cpp
-Joystick(uint8_t x_pin, uint8_t y_pin, uint8_t button_pin, 
-         uint8_t margin_x = 0, uint8_t margin_y = 0)
-```
-
-- `margin_x/y`: Dead zone radius around center (512)
-
-#### Methods
-
 | Method | Description |
 |-------|-------------|
 | `autotrim(lb_x, ub_x, lb_y, ub_y)` | Calibrates joystick center and sets output range |
@@ -153,7 +115,6 @@ Joystick(uint8_t x_pin, uint8_t y_pin, uint8_t button_pin,
 - Applies left/right or up/down dead zones.
 - Maps input to a custom range (e.g. `-255` to `255`).
 
----
 
 ## 📐 How Calibration Works
 
@@ -165,44 +126,7 @@ When you call `autotrim(...)`, the joystick:
 
 This helps eliminate jitter and center drift on low-quality joysticks.
 
----
-
-## 📊 Example Output
-
-```
-X: 0 Y: 0
-X: 45 Y: -30
-X: 120 Y: -200
-Joystick pressed!
-```
-
----
-
-## 📎 Wiring Guide
-
-| Component     | Arduino Connection        |
-|---------------|----------------------------|
-| Button        | Pin → GND, Other → Pin with `INPUT_PULLUP` |
-| Potentiometer | Wiper → A0, Ends → 5V/GND |
-| Joystick      | X → A0, Y → A1, SW → D3 (with pull-up) |
-
----
-
 ## 📄 License
 
 MIT License — Free for personal and commercial use.  
 See [LICENSE](LICENSE) for details.
-
----
-
-> ✅ Tip: Use `Serial.begin(9600)` in `setup()` to debug input values.
-
----
-
-Let me know if you'd like to add:
-- Diagrams
-- Video demo link
-- PlatformIO support
-- More examples (e.g. motor control, servo, etc.)
-
-Happy coding! 🎮🕹️
