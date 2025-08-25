@@ -27,8 +27,6 @@ Perfect for DIY controllers, robotics, UI prototypes, and interactive art.
 #include "Control.h"
 ```
 
-> ⚠️ Rename the main header file to `Control.h` if needed, or include individual components.
-
 ## 🔧 Components
 
 ### 1. `Button`
