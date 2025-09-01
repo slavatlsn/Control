@@ -24,7 +24,7 @@ Perfect for DIY controllers, robotics, UI prototypes, and interactive art.
 4. Include the header in your sketch:
 
 ```cpp
-#include "Control.h"
+#include "control.h"
 ```
 
 ## 🔧 Components
